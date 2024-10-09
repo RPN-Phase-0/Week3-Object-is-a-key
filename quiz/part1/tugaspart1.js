@@ -123,3 +123,37 @@ function cariModus(arr) {
   console.log(cariModus([10, 3, 1, 2, 5])); // -1
   console.log(cariModus([1, 2, 3, 3, 4, 5])); // 3
   console.log(cariModus([7, 7, 7, 7, 7])); // -1
+
+//sistem ubah hurufnya misal huruf a diubah menjadi b, c menjadi d, b menjadi c, z menjadi a
+//intinya ubah huruf menjadi huruf setelahnya
+function ubahHuruf(kata) {
+    // you can only write your code here!
+
+    // buat aray alphabet yang nanti akan berguna 
+    const alphabetArray = Array.from("abcdefghijklmnopqrstuvwxyz");
+    
+
+    // buat sebuah variable yag nanti akan menampung nilainya 
+    let hasil = ""
+
+    // buat perulangan yang menginteri setiap parameter 
+    for (let i = 0; i < kata.length; i++) {
+        let indexkata = kata[i]
+        for (let a = 0; a < alphabetArray.length; a++) {
+            if (indexkata == alphabetArray[a]) {
+                hasil = hasil + alphabetArray[a + 1]
+                break;
+            }
+        }
+    }
+
+    return hasil;
+  }
+
+  
+  // TEST CASES
+  console.log(ubahHuruf('wow')); // xpx
+  console.log(ubahHuruf('developer')); // efwfmpqfs
+  console.log(ubahHuruf('javascript')); // kbwbtdsjqu
+  console.log(ubahHuruf('keren')); // lfsfo
+  console.log(ubahHuruf('semangat')); // tfnbohbu
