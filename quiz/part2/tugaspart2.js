@@ -102,3 +102,54 @@ console.log(tukarBesarKecil('I aM aLAY')); // "i Am Alay"
 console.log(tukarBesarKecil('My Name is Bond!!')); // "mY nAME IS bOND!!"
 console.log(tukarBesarKecil('IT sHOULD bE me')); // "it Should Be ME"
 console.log(tukarBesarKecil('001-A-3-5TrdYW')); // "001-a-3-5tRDyw"
+
+/*
+Diberikan sebuah function checkAB(str) yang menerima satu parameter berupa string. 
+function tersebut mengembalikan nilai true jika di dalam string tersebut terdapat karakter a dan b yang memiliki jarak 3 karakter lain minimal satu kali. 
+Jika tidak ditemukan sama sekali, kembalikan nilai false. Jarak bisa dari a ke b, atau b ke a.
+
+contoh:
+barbarian kenapa bisa true?
+karena di bagian 'barian' terdapat b dipisah 3 karakter ari(totalnya 3) dan ketemu a
+
+Spasi juga dianggap sebagai karakter
+*/
+
+function checkAB(num) {
+  // you can only write your code here!
+  // buat variable di split dulu biar bisa jadi aray 
+  let kata = num.split("")
+
+  let simpanA = 0
+  let penyimpanB = 0
+
+
+  // buat perulangan biar bisa menemukan index nya 
+  for (let i = 0; i < num.length; i++) {
+    // cek apakah variable kata punya huruf a 
+    if (kata[i] == "a") {
+      // jika ada buat variable penyimpan index a 
+      simpanA = i
+      console.log(`ini index a: ${simpanA}`)
+      // misal gak ada a sekarang cari b  
+    } 
+    if (kata[i] == "b") {
+      // misal ketemu b simpen di variable peyimpanB 
+      penyimpanB = i
+      console.log(`ini index b: ${penyimpanB}`);
+    }
+  }
+
+  if (simpanA != 0 && penyimpanB != 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// TEST CASES
+console.log(checkAB('lane borrowed')); // true
+console.log(checkAB('i am sick')); // false
+console.log(checkAB('you are boring')); // true
+console.log(checkAB('barbarian')); // true
+console.log(checkAB('bacon and meat')); // false
