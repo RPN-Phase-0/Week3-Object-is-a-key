@@ -69,3 +69,63 @@ console.log(deepSum([
 ])); // 156
 
 console.log(deepSum([])); // No number
+
+/*
+Diberikan function naikAngkot(listPenumpang) yang akan menerima satu parameter berupa array dua dimensi. Function akan me-return array of object.
+
+Diberikan sebuah rute, dari A - F. Penumpang diwajibkan membayar Rp2000 setiap melewati satu rute.
+
+Contoh: input: [['Dimitri', 'B', 'F']] output: [{ penumpang: 'Dimitri', naikDari: 'B', tujuan: 'F', bayar: 8000 }]
+*/
+
+function naikAngkot(arrPenumpang) {
+  rute = ['A', 'B', 'C', 'D', 'E', 'F'];
+  //your code here
+  if (arrPenumpang.length == 0) {
+    return []
+  }
+
+  let hasil = []
+
+  // buat perulangan for each aja biar enak 
+  arrPenumpang.forEach((a) => {
+    let obj = {
+      penumpang : a[0],
+      narikDari : a[1],
+      tujuan : a[2],
+      bayar : 0
+    }
+
+    let ruteNarikDari = 0
+    let tujuan = 0
+
+    // buat perulangan di rute pakai for biasa aja 
+    for (let i = 0; i < rute.length; i++) {
+      // periksa jika objek naik dari apakah sama kalau sama simpen index nya 
+      if (obj.narikDari == rute[i]) {
+        // kalau sudah ketemu index nya simpen di varibel trus nantik di kurangi dan di kali 2000
+        ruteNarikDari = i
+      }
+      if (obj.tujuan == rute[i]) {
+        tujuan = i
+      }
+      let ongkos = (tujuan - ruteNarikDari) * 2000
+      // kalau sudah masukkan di obj.yang properti nya bayar 
+      obj.bayar = ongkos
+    }
+    
+
+    // masukan objek di dalam aray hasil
+    hasil.push(obj)
+  });  
+
+
+  return(hasil)
+}
+
+//TEST CASE
+console.log(naikAngkot([['Dimitri', 'B', 'F'], ['Icha', 'A', 'B']]));
+// [ { penumpang: 'Dimitri', naikDari: 'B', tujuan: 'F', bayar: 8000 },
+//   { penumpang: 'Icha', naikDari: 'A', tujuan: 'B', bayar: 2000 } ]
+
+console.log(naikAngkot([])); //[]
