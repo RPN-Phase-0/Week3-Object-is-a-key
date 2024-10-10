@@ -77,3 +77,28 @@ console.log(urutkanAbjad('developer')); // 'deeeloprv'
 console.log(urutkanAbjad('software')); // 'aeforstw'
 console.log(urutkanAbjad('aegis')); // 'aegis'
 
+//TIPS: gunakan method toUpperCase() dan toLowerCase()
+function tukarBesarKecil(kalimat) {
+  // you can only write your code here!
+
+  // penyimpanan kalimat menjadi aray 
+  let kata = kalimat.split("")
+
+  // perulangan for untuk mencari index yang menggunakan huruf besar 
+  for (let i = 0; i < kalimat.length; i++) {
+    if (kata[i] == kata[i].toUpperCase()) {
+      kata[i] = kata[i].toLowerCase()
+    } else {
+      kata[i] = kata[i].toUpperCase()
+    }
+  }
+
+  return kata.join("");
+}
+
+// TEST CASES
+console.log(tukarBesarKecil('Hello World')); // "hELLO wORLD"
+console.log(tukarBesarKecil('I aM aLAY')); // "i Am Alay"
+console.log(tukarBesarKecil('My Name is Bond!!')); // "mY nAME IS bOND!!"
+console.log(tukarBesarKecil('IT sHOULD bE me')); // "it Should Be ME"
+console.log(tukarBesarKecil('001-A-3-5TrdYW')); // "001-a-3-5tRDyw"
