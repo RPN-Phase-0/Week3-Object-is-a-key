@@ -46,3 +46,34 @@ function digitPerkalianMinimum(angka) {
   console.log(digitPerkalianMinimum(20)); // 2
   console.log(digitPerkalianMinimum(179)); // 4
   console.log(digitPerkalianMinimum(1)); // 2
+
+//DILARANG MENGGUNAKAN METHOD SORT, PELAJARI ALGORITMA SORTING YANG ADA DI GOOGLE
+//saran sih pake bubblesort walau tidak efisien tapi bagus buat belajar sorting
+function urutkanAbjad(str) {
+  // you can only write your code here!
+  let arr = str.split('');
+
+  // buat perulngan untuk mengetahui index parameter
+  // memeriksa sampai l doang
+  for (let i = 0; i < arr.length - 1; i++) {
+    // memeriksa sampai  
+    for (let a = 0; a < arr.length - 1 - i; a++) {
+      if (arr[a] > arr[a + 1]) {
+        // Tukar posisi aika elemen sebelumnya lebih besar dari elemen sesudahnya
+        let temp = arr[a]; 
+        arr[a] = arr[a + 1];
+        arr[a + 1] = temp;
+      }
+    }
+  }
+
+  return arr.join('');
+}
+
+// TEST CASES
+console.log(urutkanAbjad('hello')); // 'ehllo'
+console.log(urutkanAbjad('truncate')); // 'acenrttu'
+console.log(urutkanAbjad('developer')); // 'deeeloprv'
+console.log(urutkanAbjad('software')); // 'aeforstw'
+console.log(urutkanAbjad('aegis')); // 'aegis'
+
