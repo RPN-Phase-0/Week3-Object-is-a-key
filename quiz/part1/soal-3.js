@@ -1,23 +1,24 @@
 function cariMedian(arr) {
     // you can only write your code here!
     const jumlahData = arr.length;
-    let sortData = [];
     let position = 0;
-    let currentNum = 0;
+
+    // sort
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
+            if(arr[j] > arr[j + 1]) {
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
     if(jumlahData % 2 === 0) {
         let posisi = jumlahData / 2 
         position = (arr[posisi - 1] + arr[posisi]) / 2;
     }
     if(jumlahData % 2 !== 0) {
-        for (let i = 0; i < arr.length - 1; i++) {
-            for (let j = 0; j < arr.length - i - 1; j++) {
-                if(arr[j] > arr[j + 1]) {
-                    let temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }
         position = (jumlahData + 1) / 2
     }
     

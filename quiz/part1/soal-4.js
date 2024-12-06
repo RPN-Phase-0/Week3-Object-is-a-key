@@ -15,7 +15,6 @@ function cariModus(arr) {
         for (let j = 0; j < arr.length; j++) {
             const element2 = arr[j];
             if(element === element2) {
-                // console.log('heel', element2)
                 count++    
             }
         }
