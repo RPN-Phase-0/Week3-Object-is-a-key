@@ -21,6 +21,25 @@ Return 2
 */
 function digitPerkalianMinimum(angka) {
     // you can only write your code here!
+    const factor = []
+    for (let i = 1; i <= angka; i++) {
+        if(angka % i === 0) {
+            // console.log(i)
+            factor.push(i)
+        }
+    }
+    let minimum = 0;
+    for (let i = 0; i < factor.length; i++) {
+        const element = factor[i];
+        let digit = `${element}${factor[factor.length - i - 1]}`
+        // console.log(element, factor[factor.length - i - 1], `${element}*${factor[factor.length - i - 1]}`, '=', digit, digit.length)
+        if(i === 0) {
+            minimum = digit.length;
+        } else if(digit.length < minimum) {
+            minimum = digit.length
+        }
+    }
+    return minimum
 }
 
 // TEST CASES
