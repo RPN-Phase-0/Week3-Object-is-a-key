@@ -74,10 +74,10 @@ for (let i = 0; i < studentDatas.length; i++) {
 console.log(newStudentDatas)
 ```
 
-Yah kira kira begitu lah yak hehe
+Langsung cobain praktek untuk manipulasi object, dan banyakin latihan dengan object
 ---------------------------------------
 video tentang object
 
-[Tutorial Object by RPN](https://youtu.be/pCYUrbRRRXQ)
+[Tutorial Object by Harkon](https://youtu.be/pCYUrbRRRXQ)
 
 ***Sangat disarankan untuk mencari sumber belajar object dari tempat lain***
